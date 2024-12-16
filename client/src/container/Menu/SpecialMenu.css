@@ -1,0 +1,164 @@
+/* General Styles */
+.app_specialMenu {
+    flex-direction: column;
+    background: var(--color-orange);
+    padding: 2rem;
+}
+
+.app_specialMenu_title {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-brown);
+}
+
+.text {
+    font-family: var(--font-base);
+    font-size: 64px;
+    line-height: 83.2px;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+}
+
+/* Main Special Menu container */
+.app_specialMenu_menu {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+/* Scroll Animations for Wine & Beer, Cocktails, and Image */
+.app_specialMenu_menu_wine,
+.app_specialMenu_menu_cocktails {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(50px); /* Default position, start offscreen */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Wine Section Animation */
+.app_specialMenu_menu_wine.wine-animate {
+    opacity: 1;
+    transform: translateY(0); /* Slide up from bottom */
+}
+
+/* Cocktails Section Animation */
+.app_specialMenu_menu_cocktails.cocktail-animate {
+    opacity: 1;
+    transform: translateY(0); /* Slide up from bottom */
+}
+
+/* Image Animation - Slide Down */
+.app_specialMenu_menu_img {
+    opacity: 0;
+    transform: translateY(-50px); /* Start offscreen from the top */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.app_specialMenu_menu_img.image-animate {
+    opacity: 1;
+    transform: translateY(0); /* Slide down into view */
+}
+
+/* Wine & Cocktail Sections */
+.app_specialMenu_menu_wine,
+.app_specialMenu_menu_cocktails {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start; /* Align the sections to the left */
+}
+
+/* Heading Style */
+.app_specialMenu_menu_heading {
+    font-family: var(--font-base);
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 58.5px;
+    letter-spacing: 0.04em;
+    color: var(--color-smokewhite);
+    text-align: left; /* Align headings to the left */
+    margin-left: 0; /* Remove extra margins */
+}
+
+/* Menu Items List */
+.app_specialMenu_menu_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 1rem 1rem;
+    width: 80%;
+    padding-left: 1rem; /* Ensure no extra padding */
+    text-align: center; /* Ensure text is aligned in the center */
+}
+
+/* Styling for Image Section */
+.app_specialMenu_menu_img {
+    width: 410px;
+    margin: 0 2rem;
+}
+
+.app_specialMenu_menu_img img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Query for Larger Screens */
+@media screen and (min-width: 2000px) {
+    .app_specialMenu_menu_img {
+        width: 650px;
+    }
+
+    .app_specialMenu_menu_img img {
+        height: 920px;
+    }
+}
+
+/* Media Query for Medium Screens (Between 1150px to 2000px) */
+@media screen and (max-width: 1150px) {
+    .app_specialMenu_menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .app_specialMenu_menu_img {
+        margin: 3rem 0;
+    }
+}
+
+/* Media Query for Small Screens (Below 650px) */
+@media screen and (max-width: 650px) {
+    .app_specialMenu_menu_img {
+        width: 100%;
+    }
+
+    .app_specialMenu_menu_heading {
+        font-size: 35px;
+        line-height: 48.5px;
+    }
+
+    /* Centering the items on small screens */
+    .app_specialMenu_menu_items {
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        padding-left: 0; /* Ensure no extra padding */
+        margin: 1rem 0; /* Adjust margin */
+    }
+
+    /* Reducing font size for mobile screens */
+    .text {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    /* Adjust Wine and Cocktail Sections to be centered */
+    .app_specialMenu_menu_wine, 
+    .app_specialMenu_menu_cocktails {
+        align-items: center; /* Center the sections */
+    }
+}

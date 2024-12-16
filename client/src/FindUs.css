@@ -1,0 +1,56 @@
+/* Find Us Scroll Animations */
+.wrap_info,
+.wrap_img {
+  opacity: 0;
+  transform: translateX(50px); /* Default state - hidden with offset */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Slide-in from the left for info section */
+.wrap_info {
+  transform: translateX(-50px); /* Start from left */
+}
+
+.wrap_info.info-animate {
+  opacity: 1;
+  transform: translateX(0); /* Animate to normal position */
+}
+
+/* Slide-in from the right for image */
+.wrap_img {
+  transform: translateX(50px); /* Start from right */
+}
+
+.wrap_img.image-animate {
+  opacity: 1;
+  transform: translateX(0); /* Animate to normal position */
+}
+
+/* Styling for the image container to limit size */
+.wrap_img img {
+  width: 80%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image is properly cropped and scaled */
+  transition: transform 0.8s ease-out; /* Smooth scaling effect during animation */
+}
+
+/* Image size for larger screens */
+@media screen and (min-width: 1150px) {
+  .wrap_img img {
+    max-width: 700px; /* Adjust the max-width for larger screens */
+  }
+}
+
+/* Image size for small screens */
+@media screen and (max-width: 650px) {
+  .wrap_img img {
+    max-width: 100%; /* Use full width for smaller screens */
+  }
+}
+
+/* Align only the "Contact" title to the left (targeting the SubHeading component) */
+.sub-heading {
+  text-align: left;
+  margin-left: 0; /* Optional: Reset any left margin if needed */
+}
+ 

@@ -1,0 +1,145 @@
+/* General Styles for About Us Section */
+.app_aboutus {
+    position: relative;
+}
+
+.app_aboutus_overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.app_aboutus_overlay img {
+    width: 391px;
+    height: 415px;
+    z-index: 0;
+}
+
+.app_aboutus_content {
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    flex-direction: row;
+}
+
+.app_aboutus_content_about,
+.app_aboutus_content_knife,
+.app_aboutus_content_history {
+    opacity: 0;
+    transform: translateX(0); /* Initial state */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+/* Content for the About Us section - Align elements to left */
+.app_aboutus_content_about {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    margin: 2rem 4rem;
+}
+
+/* Knife Section - Shift the image to the left */
+.app_aboutus_content_knife {
+    display: flex;
+    justify-content: flex-start; /* Align the image to the left */
+    align-items: center; /* Keep the image vertically centered */
+    margin: 2rem 4rem;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Ensure smooth transition */
+}
+
+.app_aboutus_content_knife img {
+    height: 910px; /* Adjust image height as needed */
+    object-fit: contain; /* Ensure the image scales without distortion */
+    margin-right: 3.5rem;
+}
+
+.app_aboutus_content_knife.knife-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.app_aboutus_content_history {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* About Section - Slide In from Left */
+.app_aboutus_content_about {
+    transform: translateX(-50px);
+}
+
+.app_aboutus_content_about.about-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Knife Section - Slide In from Bottom */
+.app_aboutus_content_knife {
+    transform: translateY(50px);
+}
+
+.app_aboutus_content_knife.knife-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* History Section - Slide In from Right */
+.app_aboutus_content_history {
+    transform: translateX(50px);
+}
+
+.app_aboutus_content_history.history-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* For larger screens (over 2000px) */
+@media screen and (min-width: 2000px) {
+    .app_aboutus_content_knife img {
+        height: 1110px;
+    }
+
+    .app_aboutus_content_about p,
+    .app_aboutus_content_history p {
+        margin: 4rem 0;
+    }
+}
+
+/* For medium to small screens (less than 900px) */
+@media screen and (max-width: 900px) {
+    .app_aboutus_content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .app_aboutus_content_knife {
+        margin: 4rem 0;
+    }
+}
+
+/* For small screens (less than 650px) */
+@media screen and (max-width: 650px) {
+    .app_aboutus_overlay img {
+        width: 80%;
+        height: 320px;
+    }
+
+    .app_aboutus_content_about,
+    .app_aboutus_content_history {
+        margin: 1rem 0;
+    }
+
+    .app_aboutus_content_knife img {
+        height: 500px;
+    }
+}

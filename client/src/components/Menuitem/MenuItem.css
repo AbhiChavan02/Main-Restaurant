@@ -1,0 +1,91 @@
+/* Menu Item Container */
+.app_menuitem {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+  }
+  
+  /* Menu Item Header */
+  .app_menuitem_head {
+    display: flex;
+    justify-content: space-between; /* Space between name and price */
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 0.5rem; /* Add space below the title and price */
+  }
+  
+  /* Menu item name */
+  .app_menuitem_name {
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjust font size */
+    color: #392811; /* Color for the item name */
+    margin-right: 1rem; /* Add some space to the right of the item name */
+    flex-grow: 1; /* Ensure name takes available space */
+  }
+  
+  /* Dashed line between name and price */
+  .app_menuitem_dash {
+    width: 90px; /* Dash width */
+    height: 1px; /* Dash height */
+    background: var(--color-brown); /* Dash color */
+    margin: 0 1rem; /* Space between the dash and name/price */
+  }
+  
+  /* Menu item price */
+  .app_menuitem_price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #392811; /* Color for the price */
+    white-space: nowrap; /* Prevent price from wrapping onto the next line */
+  }
+  
+  /* Subcontainer for the menu item description */
+  .app_menuitem_sub {
+    width: 100%;
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    text-align: justify; /* Justify the description text */
+  }
+  
+  /* For small screens (less than 650px) */
+  @media screen and (max-width: 650px) {
+    .app_menuitem_head {
+      flex-direction: column; /* Stack name and price vertically */
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .app_menuitem_name {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+      margin-bottom: 0.5rem; /* Space between name and dash */
+    }
+  
+    .app_menuitem_price {
+      font-size: 1rem; /* Adjust price font size */
+      margin-bottom: 0.5rem; /* Space below the price */
+    }
+  
+    .app_menuitem_dash {
+      width: 60px; /* Shorter dash for small screens */
+      margin: 0.5rem 0; /* Add space between dash and price */
+    }
+  }
+  
+  /* For medium screens (between 650px to 1150px) */
+  @media screen and (max-width: 1150px) and (min-width: 650px) {
+    .app_menuitem_head {
+      font-size: 1rem;
+    }
+  
+    .app_menuitem_price {
+      font-size: 1.2rem;
+    }
+  
+    .app_menuitem_dash {
+      width: 80px; /* Adjust dash for medium screens */
+    }
+  }
+  

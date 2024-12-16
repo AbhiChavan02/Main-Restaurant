@@ -1,0 +1,236 @@
+/* General Navbar Styles */
+.app_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #392811; /* Navbar background color */
+    color: white;
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Ensure it's stuck to the top */
+    z-index: 1000; /* Keep it on top of other content when scrolling */
+    width: 100%; /* Ensure full-width */
+}
+
+/* Logo */
+.app_navbar_logo img {
+    max-height: 50px; /* Logo size */
+}
+
+/* Navbar Links */
+.app_navbar_links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;  /* Allow the links to take up available space */
+    justify-content: center;  /* Center align links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app_navbar_links li {
+    margin: 0 1.5rem;
+}
+
+.app_navbar_links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Login and Book Table buttons */
+.app_navbar_login {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.app_navbar_login a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #f9b934;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: background-color 0.3s;
+}
+
+.app_navbar_login a:hover {
+    background-color: #e89600;
+}
+
+/* Mobile Menu (Hamburger) */
+.app_navbar_smallscreen {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem; /* Add some padding to prevent touching the screen edges */
+    z-index: 1000; /* Ensure it stays on top */
+    position: absolute;
+    top: 1rem;  /* Adjust the position */
+    right: 1rem;  /* Adjust the position */
+}
+
+/* Mobile Menu Styles */
+.app_navbar_smallscreen_overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #392811;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    animation: slideIn 0.3s ease-out;
+    display: none; /* Hidden by default */
+}
+
+.app_navbar_smallscreen_overlay.active {
+    display: flex; /* Show overlay when 'active' class is added */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.app_navbar_smallscreen_links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app_navbar_smallscreen_links li {
+    margin: 1rem 0;
+}
+
+.app_navbar_smallscreen_links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Close Button for Small Menu */
+.overlay_close {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Login and Book Table Links in Mobile Menu */
+.app_navbar_smallscreen_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.app_navbar_smallscreen_login a {
+    background-color: #f9b934;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.app_navbar_smallscreen_login a:hover {
+    background-color: #e89600;
+}
+
+/* For screens 768px and above (Tablet/Tablet Landscape/Small Desktops) */
+@media screen and (min-width: 768px) {
+    .app_navbar {
+        padding: 1rem 2rem;
+    }
+
+    .app_navbar_links {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center align links horizontally */
+        flex-grow: 1;
+    }
+
+    .app_navbar_links li {
+        margin: 0 1.5rem;  /* Space between the menu items */
+    }
+
+    .app_navbar_login {
+        display: flex;
+        align-items: center;
+    }
+
+    .app_navbar_smallscreen {
+        display: none; /* Hide hamburger menu for tablet and larger screens */
+    }
+
+    .app_navbar_smallscreen_overlay {
+        display: none;  /* Hide overlay for larger screens */
+    }
+}
+
+/* For smaller screens (less than 768px) */
+@media screen and (max-width: 767px) {
+    .app_navbar_links {
+        display: none; /* Hide the links by default on mobile */
+    }
+
+    .app_navbar_smallscreen {
+        display: block; /* Show hamburger menu icon */
+    }
+
+    .app_navbar_logo {
+        flex: 1;
+    }
+
+    /* Center Login and Book Table buttons on mobile screens */
+    .app_navbar_login {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center buttons horizontally */
+        margin-top: 1rem;
+        flex-grow: 1; /* Allow buttons to grow and fill available space */
+    }
+
+    .app_navbar_login a {
+        background-color: #f9b934;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .app_navbar_login a:hover {
+        background-color: #e89600;
+    }
+}
+
+/* For extra small screens */
+@media screen and (max-width: 480px) {
+    .app_navbar_logo img {
+        max-height: 50px; /* Adjust logo size */
+    }
+
+    .app_navbar_links a {
+        font-size: 1rem; /* Adjust link font size */
+    }
+    
+}
+
+
+
